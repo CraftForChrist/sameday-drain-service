@@ -1,168 +1,232 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2869
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Same Day Drain Service | Fast & Reliable Drain Cleaning</title>
+  <style>
+    :root {
+      --orange: #FF5500;
+      --orange-dark: #D44400;
+      --bg-dark: #0F1216;
+      --card-bg: #1A1F26;
+      --text: #F1F5F9;
+      --text-muted: #94A3B8;
+      --border: #2E3642;
+    }
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-  <meta charset="UTF-8" />\
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>\
-  <title>Same Day Drain Service - Instant Dispatch Studio</title>\
-  <style>\
-    :root \{\
-      --primary: #FF5500;\
-      --primary-hover: #E04B00;\
-      --dark-bg: #111418;\
-      --card-bg: #1B2026;\
-      --text-main: #FFFFFF;\
-      --text-muted: #A0AAB5;\
-      --accent-border: #2A323D;\
-    \}\
-\
-    * \{ box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; \}\
-    body \{ background-color: var(--dark-bg); color: var(--text-main); padding: 20px; min-height: 100vh; display: flex; justify-content: center; align-items: center; \}\
-\
-    .container \{ width: 100%; max-width: 600px; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--accent-border); padding: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); \}\
-    .header \{ text-align: center; margin-bottom: 24px; \}\
-    .badge \{ display: inline-block; background: rgba(255, 85, 0, 0.15); color: var(--primary); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; \}\
-    .title \{ font-size: 1.8rem; font-weight: 800; \}\
-    .subtitle \{ color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; \}\
-\
-    .step-indicator \{ display: flex; justify-content: space-between; margin-bottom: 24px; position: relative; \}\
-    .step-dot \{ width: 100%; height: 4px; background: var(--accent-border); margin: 0 4px; border-radius: 2px; transition: background 0.3s ease; \}\
-    .step-dot.active \{ background: var(--primary); \}\
-\
-    .step \{ display: none; \}\
-    .step.active \{ display: block; animation: fadeIn 0.3s ease-in-out; \}\
-\
-    @keyframes fadeIn \{ from \{ opacity: 0; transform: translateY(8px); \} to \{ opacity: 1; transform: translateY(0); \} \}\
-\
-    .step-title \{ font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; \}\
-    \
-    .grid \{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; \}\
-    .option-btn \{ background: #222830; border: 2px solid var(--accent-border); color: var(--text-main); padding: 16px; border-radius: 12px; font-weight: 600; text-align: center; cursor: pointer; transition: all 0.2s ease; \}\
-    .option-btn:hover, .option-btn.selected \{ border-color: var(--primary); background: rgba(255, 85, 0, 0.1); color: var(--text-main); \}\
-\
-    input, textarea, select \{ width: 100%; padding: 14px; background: #222830; border: 1px solid var(--accent-border); border-radius: 8px; color: #fff; font-size: 1rem; margin-bottom: 12px; outline: none; \}\
-    input:focus, textarea:focus \{ border-color: var(--primary); \}\
-\
-    .nav-btns \{ display: flex; gap: 12px; margin-top: 24px; \}\
-    .btn \{ flex: 1; padding: 14px; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; transition: 0.2s ease; \}\
-    .btn-prev \{ background: #2A323D; color: #fff; \}\
-    .btn-next \{ background: var(--primary); color: #fff; \}\
-    .btn-next:hover \{ background: var(--primary-hover); \}\
-\
-    .summary-card \{ background: #14181D; padding: 16px; border-radius: 8px; border: 1px solid var(--accent-border); margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6; \}\
-  </style>\
-</head>\
-<body>\
-\
-<div class="container">\
-  <div class="header">\
-    <span class="badge">\uc0\u9889  24/7 Rapid Response</span>\
-    <h1 class="title">Request Same Day Service</h1>\
-    <p class="subtitle">Tell us what's backing up and we'll dispatch a tech right away.</p>\
-  </div>\
-\
-  <div class="step-indicator">\
-    <div class="step-dot active" id="dot1"></div>\
-    <div class="step-dot" id="dot2"></div>\
-    <div class="step-dot" id="dot3"></div>\
-    <div class="step-dot" id="dot4"></div>\
-  </div>\
-\
-  <!-- STEP 1 -->\
-  <div class="step active" id="step1">\
-    <div class="step-title">01. What drain is giving you trouble?</div>\
-    <div class="grid">\
-      <div class="option-btn" onclick="selectOption(this, 'drain', 'Kitchen Sink / Garbage Disposal')">\uc0\u55358 \u56675  Kitchen Sink</div>\
-      <div class="option-btn" onclick="selectOption(this, 'drain', 'Toilet / Bathroom Line')">\uc0\u55357 \u57021  Toilet / Bath</div>\
-      <div class="option-btn" onclick="selectOption(this, 'drain', 'Main Sewer Line Backup')">\uc0\u55357 \u57000  Main Line Sewer</div>\
-      <div class="option-btn" onclick="selectOption(this, 'drain', 'Commercial / Floor Drain')">\uc0\u55356 \u57314  Commercial Drain</div>\
-    </div>\
-  </div>\
-\
-  <!-- STEP 2 -->\
-  <div class="step" id="step2">\
-    <div class="step-title">02. How urgent is this?</div>\
-    <div class="grid">\
-      <div class="option-btn" onclick="selectOption(this, 'urgency', 'EMERGENCY - Active Overflow!')">\uc0\u55357 \u56613  Active Overflow (Need Emergency Dispatch)</div>\
-      <div class="option-btn" onclick="selectOption(this, 'urgency', 'Same Day Window')">\uc0\u55357 \u56517  Today (Flexible Arrival Window)</div>\
-    </div>\
-  </div>\
-\
-  <!-- STEP 3 -->\
-  <div class="step" id="step3">\
-    <div class="step-title">03. Where should we send the technician?</div>\
-    <input type="text" id="fullname" placeholder="Your Full Name" />\
-    <input type="tel" id="phone" placeholder="Phone Number (for arrival text)" />\
-    <input type="text" id="address" placeholder="Service Address / City" />\
-    <textarea id="notes" rows="3" placeholder="Any extra details? (e.g., water rising, odd smells, slow flow)"></textarea>\
-  </div>\
-\
-  <!-- STEP 4 -->\
-  <div class="step" id="step4">\
-    <div class="step-title">04. Review & Confirm Dispatch Request</div>\
-    <div class="summary-card" id="summary"></div>\
-    <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">Submitting sends an urgent dispatch alert directly to our on-call plumbing technician.</p>\
-  </div>\
-\
-  <div class="nav-btns">\
-    <button class="btn btn-prev" id="prevBtn" onclick="changeStep(-1)" style="display:none;">Back</button>\
-    <button class="btn btn-next" id="nextBtn" onclick="changeStep(1)">Continue \uc0\u8594 </button>\
-  </div>\
-</div>\
-\
-<script>\
-  let currentStep = 1;\
-  const formData = \{ drain: '', urgency: '', name: '', phone: '', address: '', notes: '' \};\
-\
-  function selectOption(el, key, val) \{\
-    const parent = el.parentElement;\
-    parent.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));\
-    el.classList.add('selected');\
-    formData[key] = val;\
-  \}\
-\
-  function changeStep(delta) \{\
-    if (delta === 1 && currentStep === 1 && !formData.drain) return alert('Please select a drain type.');\
-    if (delta === 1 && currentStep === 2 && !formData.urgency) return alert('Please select urgency level.');\
-    if (delta === 1 && currentStep === 3) \{\
-      formData.name = document.getElementById('fullname').value;\
-      formData.phone = document.getElementById('phone').value;\
-      formData.address = document.getElementById('address').value;\
-      formData.notes = document.getElementById('notes').value;\
-      if (!formData.name || !formData.phone || !formData.address) return alert('Please fill in your name, phone, and address.');\
-      \
-      document.getElementById('summary').innerHTML = `\
-        <strong>Issue:</strong> $\{formData.drain\}<br>\
-        <strong>Urgency:</strong> $\{formData.urgency\}<br>\
-        <strong>Customer:</strong> $\{formData.name\} ($\{formData.phone\})<br>\
-        <strong>Location:</strong> $\{formData.address\}<br>\
-        $\{formData.notes ? '<strong>Notes:</strong> ' + formData.notes : ''\}\
-      `;\
-    \}\
-\
-    if (currentStep === 4 && delta === 1) \{\
-      alert('\uc0\u55356 \u57225  Dispatch Request Sent! Our technician will text/call you within 15 minutes.');\
-      return;\
-    \}\
-\
-    document.getElementById(`step$\{currentStep\}`).classList.remove('active');\
-    document.getElementById(`dot$\{currentStep\}`).classList.remove('active');\
-    \
-    currentStep += delta;\
-\
-    document.getElementById(`step$\{currentStep\}`).classList.add('active');\
-    document.getElementById(`dot$\{currentStep\}`).classList.add('active');\
-\
-    document.getElementById('prevBtn').style.display = currentStep === 1 ? 'none' : 'block';\
-    document.getElementById('nextBtn').innerText = currentStep === 4 ? 'DISPATCH NOW \uc0\u55357 \u56960 ' : 'Continue \u8594 ';\
-  \}\
-</script>\
-\
-</body>\
-</html>}
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text); line-height: 1.6; }
+
+    .hero {
+      position: relative;
+      height: 85vh;
+      background: linear-gradient(180deg, rgba(15,18,22,0.6) 0%, rgba(15,18,22,0.95) 100%), 
+                  url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .badge {
+      background: rgba(255, 85, 0, 0.2);
+      border: 1px solid var(--orange);
+      color: var(--orange);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 12px; }
+    .hero h1 span { color: var(--orange); }
+    .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 500px; margin-bottom: 24px; }
+
+    .cta-btn {
+      background: var(--orange);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(255, 85, 0, 0.4);
+      transition: all 0.2s ease;
+    }
+    .cta-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+
+    .section { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+    .section-title { font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 8px; }
+    .section-sub { text-align: center; color: var(--text-muted); margin-bottom: 32px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: border 0.2s ease;
+    }
+    .card:hover { border-color: var(--orange); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h3 { font-size: 1.2rem; margin-bottom: 6px; }
+    .card p { font-size: 0.88rem; color: var(--text-muted); }
+
+    .form-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-top: 20px;
+    }
+
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .option-card {
+      background: #12151B;
+      border: 2px solid var(--border);
+      padding: 16px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .option-card.selected { border-color: var(--orange); background: rgba(255, 85, 0, 0.12); }
+
+    input, textarea {
+      width: 100%;
+      background: #12151B;
+      border: 1px solid var(--border);
+      color: white;
+      padding: 14px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+
+    .nav-buttons { display: flex; gap: 12px; margin-top: 20px; }
+    .btn-sec { background: var(--border); color: white; flex: 1; padding: 14px; border-radius: 8px; border: none; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="badge">⚡ 24/7 Emergency Service</div>
+    <h1>FAST. UPFRONT.<br><span>SAME DAY DRAIN SERVICE</span></h1>
+    <p>No waiting around while water rises. We clear main lines, clogged sinks, and backed-up toilets today.</p>
+    <button class="cta-btn" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Request Instant Dispatch →</button>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title">What We Fix Today</h2>
+    <p class="section-sub">Upfront flat-rate pricing before any work begins.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">🚨</div>
+        <h3>Main Sewer Lines</h3>
+        <p>Full line clearing, root removal, and backup relief.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🥣</div>
+        <h3>Kitchen & Bath</h3>
+        <p>Grease, hair, and stubborn drain clogs cleared fast.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📹</div>
+        <h3>Camera Inspection</h3>
+        <p>HD video inspection to pinpoint exact pipe blockages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="booking">
+    <h2 class="section-title">Interactive Dispatch Studio</h2>
+    <p class="section-sub">Complete 3 quick steps to alert our technician on duty.</p>
+
+    <div class="form-container">
+      <div class="form-step active" id="step1">
+        <h3>1. Which drain is clogged?</h3>
+        <div class="option-grid">
+          <div class="option-card" onclick="selectOpt(this, 'Kitchen Sink / Disposal')">🥣 Kitchen Sink</div>
+          <div class="option-card" onclick="selectOpt(this, 'Toilet / Shower')">🚽 Toilet / Bath</div>
+          <div class="option-card" onclick="selectOpt(this, 'Main Sewer Line Backup')">🚨 Main Sewer Line</div>
+          <div class="option-card" onclick="selectOpt(this, 'Commercial / Floor Drain')">🏢 Commercial Drain</div>
+        </div>
+        <div class="nav-buttons">
+          <button class="cta-btn" style="width: 100%;" onclick="nextStep(2)">Continue →</button>
+        </div>
+      </div>
+
+      <div class="form-step" id="step2">
+        <h3>2. Service Address & Contact</h3>
+        <input type="text" id="cust_name" placeholder="Your Full Name">
+        <input type="tel" id="cust_phone" placeholder="Phone Number (for tech arrival text)">
+        <input type="text" id="cust_address" placeholder="Service Address / City">
+        <div class="nav-buttons">
+          <button class="btn-sec" onclick="nextStep(1)">Back</button>
+          <button class="cta-btn" style="flex: 1;" onclick="nextStep(3)">Review Request →</button>
+        </div>
+      </div>
+
+      <div class="form-step" id="step3">
+        <h3>3. Confirm Dispatch</h3>
+        <div id="summary-box" style="background: #12151B; padding: 16px; border-radius: 8px; margin: 16px 0; font-size: 0.95rem;"></div>
+        <div class="nav-buttons">
+          <button class="btn-sec" onclick="nextStep(2)">Back</button>
+          <button class="cta-btn" style="flex: 1;" onclick="submitDispatch()">🚀 DISPATCH TECHNICIAN NOW</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let selectedDrain = '';
+
+    function selectOpt(el, val) {
+      document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedDrain = val;
+    }
+
+    function nextStep(stepNum) {
+      if (stepNum === 2 && !selectedDrain) {
+        alert('Please select a drain type first!');
+        return;
+      }
+      if (stepNum === 3) {
+        const name = document.getElementById('cust_name').value;
+        const phone = document.getElementById('cust_phone').value;
+        const addr = document.getElementById('cust_address').value;
+        if (!name || !phone || !addr) {
+          alert('Please enter your name, phone, and address.');
+          return;
+        }
+        document.getElementById('summary-box').innerHTML = `
+          <strong>Service:</strong> ${selectedDrain}<br>
+          <strong>Name:</strong> ${name}<br>
+          <strong>Phone:</strong> ${phone}<br>
+          <strong>Location:</strong> ${addr}
+        `;
+      }
+
+      document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+      document.getElementById(`step${stepNum}`).classList.add('active');
+    }
+
+    function submitDispatch() {
+      alert('🎉 Dispatch request received! An on-call technician from Same Day Drain Service has been notified and will text/call you shortly.');
+    }
+  </script>
+</body>
+</html>
