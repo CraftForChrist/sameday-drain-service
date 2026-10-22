@@ -1,232 +1,807 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Same Day Drain Service | Fast & Reliable Drain Cleaning</title>
-  <style>
-    :root {
-      --orange: #FF5500;
-      --orange-dark: #D44400;
-      --bg-dark: #0F1216;
-      --card-bg: #1A1F26;
-      --text: #F1F5F9;
-      --text-muted: #94A3B8;
-      --border: #2E3642;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    body { background-color: var(--bg-dark); color: var(--text); line-height: 1.6; }
-
-    .hero {
-      position: relative;
-      height: 85vh;
-      background: linear-gradient(180deg, rgba(15,18,22,0.6) 0%, rgba(15,18,22,0.95) 100%), 
-                  url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat fixed;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .badge {
-      background: rgba(255, 85, 0, 0.2);
-      border: 1px solid var(--orange);
-      color: var(--orange);
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 12px; }
-    .hero h1 span { color: var(--orange); }
-    .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 500px; margin-bottom: 24px; }
-
-    .cta-btn {
-      background: var(--orange);
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 800;
-      padding: 16px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(255, 85, 0, 0.4);
-      transition: all 0.2s ease;
-    }
-    .cta-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
-
-    .section { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
-    .section-title { font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 8px; }
-    .section-sub { text-align: center; color: var(--text-muted); margin-bottom: 32px; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      transition: border 0.2s ease;
-    }
-    .card:hover { border-color: var(--orange); }
-    .card-icon { font-size: 2rem; margin-bottom: 12px; }
-    .card h3 { font-size: 1.2rem; margin-bottom: 6px; }
-    .card p { font-size: 0.88rem; color: var(--text-muted); }
-
-    .form-container {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      margin-top: 20px;
-    }
-
-    .form-step { display: none; }
-    .form-step.active { display: block; }
-
-    .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
-    .option-card {
-      background: #12151B;
-      border: 2px solid var(--border);
-      padding: 16px;
-      border-radius: 10px;
-      text-align: center;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-    .option-card.selected { border-color: var(--orange); background: rgba(255, 85, 0, 0.12); }
-
-    input, textarea {
-      width: 100%;
-      background: #12151B;
-      border: 1px solid var(--border);
-      color: white;
-      padding: 14px;
-      border-radius: 8px;
-      margin-top: 10px;
-      font-size: 1rem;
-    }
-
-    .nav-buttons { display: flex; gap: 12px; margin-top: 20px; }
-    .btn-sec { background: var(--border); color: white; flex: 1; padding: 14px; border-radius: 8px; border: none; font-weight: 700; cursor: pointer; }
-  </style>
-</head>
-<body>
-
-  <header class="hero">
-    <div class="badge">⚡ 24/7 Emergency Service</div>
-    <h1>FAST. UPFRONT.<br><span>SAME DAY DRAIN SERVICE</span></h1>
-    <p>No waiting around while water rises. We clear main lines, clogged sinks, and backed-up toilets today.</p>
-    <button class="cta-btn" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Request Instant Dispatch →</button>
-  </header>
-
-  <section class="section">
-    <h2 class="section-title">What We Fix Today</h2>
-    <p class="section-sub">Upfront flat-rate pricing before any work begins.</p>
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon">🚨</div>
-        <h3>Main Sewer Lines</h3>
-        <p>Full line clearing, root removal, and backup relief.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🥣</div>
-        <h3>Kitchen & Bath</h3>
-        <p>Grease, hair, and stubborn drain clogs cleared fast.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📹</div>
-        <h3>Camera Inspection</h3>
-        <p>HD video inspection to pinpoint exact pipe blockages.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="booking">
-    <h2 class="section-title">Interactive Dispatch Studio</h2>
-    <p class="section-sub">Complete 3 quick steps to alert our technician on duty.</p>
-
-    <div class="form-container">
-      <div class="form-step active" id="step1">
-        <h3>1. Which drain is clogged?</h3>
-        <div class="option-grid">
-          <div class="option-card" onclick="selectOpt(this, 'Kitchen Sink / Disposal')">🥣 Kitchen Sink</div>
-          <div class="option-card" onclick="selectOpt(this, 'Toilet / Shower')">🚽 Toilet / Bath</div>
-          <div class="option-card" onclick="selectOpt(this, 'Main Sewer Line Backup')">🚨 Main Sewer Line</div>
-          <div class="option-card" onclick="selectOpt(this, 'Commercial / Floor Drain')">🏢 Commercial Drain</div>
-        </div>
-        <div class="nav-buttons">
-          <button class="cta-btn" style="width: 100%;" onclick="nextStep(2)">Continue →</button>
-        </div>
-      </div>
-
-      <div class="form-step" id="step2">
-        <h3>2. Service Address & Contact</h3>
-        <input type="text" id="cust_name" placeholder="Your Full Name">
-        <input type="tel" id="cust_phone" placeholder="Phone Number (for tech arrival text)">
-        <input type="text" id="cust_address" placeholder="Service Address / City">
-        <div class="nav-buttons">
-          <button class="btn-sec" onclick="nextStep(1)">Back</button>
-          <button class="cta-btn" style="flex: 1;" onclick="nextStep(3)">Review Request →</button>
-        </div>
-      </div>
-
-      <div class="form-step" id="step3">
-        <h3>3. Confirm Dispatch</h3>
-        <div id="summary-box" style="background: #12151B; padding: 16px; border-radius: 8px; margin: 16px 0; font-size: 0.95rem;"></div>
-        <div class="nav-buttons">
-          <button class="btn-sec" onclick="nextStep(2)">Back</button>
-          <button class="cta-btn" style="flex: 1;" onclick="submitDispatch()">🚀 DISPATCH TECHNICIAN NOW</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    let selectedDrain = '';
-
-    function selectOpt(el, val) {
-      document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
-      el.classList.add('selected');
-      selectedDrain = val;
-    }
-
-    function nextStep(stepNum) {
-      if (stepNum === 2 && !selectedDrain) {
-        alert('Please select a drain type first!');
-        return;
-      }
-      if (stepNum === 3) {
-        const name = document.getElementById('cust_name').value;
-        const phone = document.getElementById('cust_phone').value;
-        const addr = document.getElementById('cust_address').value;
-        if (!name || !phone || !addr) {
-          alert('Please enter your name, phone, and address.');
-          return;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same Day Drain Service | 24/7 Emergency Plumbing & Drain Cleaning</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            cyan: '#06b6d4',
+                            emerald: '#10b981'
+                        },
+                        dark: {
+                            900: '#0a0d12',
+                            800: '#121824',
+                            700: '#1b2333',
+                            600: '#28334a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s infinite ease-in-out',
+                        'float': 'float 6s infinite ease-in-out',
+                        'radar': 'radar 2s infinite linear',
+                        'shimmer': 'shimmer 2.5s infinite linear'
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.4, transform: 'scale(1)' },
+                            '50%': { opacity: 0.8, transform: 'scale(1.08)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        }
+                    }
+                }
+            }
         }
-        document.getElementById('summary-box').innerHTML = `
-          <strong>Service:</strong> ${selectedDrain}<br>
-          <strong>Name:</strong> ${name}<br>
-          <strong>Phone:</strong> ${phone}<br>
-          <strong>Location:</strong> ${addr}
-        `;
-      }
+    </script>
+    <style>
+        body {
+            background-color: #0a0d12;
+            color: #f3f4f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
 
-      document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-      document.getElementById(`step${stepNum}`).classList.add('active');
-    }
+        /* Metallic Glassmorphism Card Style */
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
 
-    function submitDispatch() {
-      alert('🎉 Dispatch request received! An on-call technician from Same Day Drain Service has been notified and will text/call you shortly.');
-    }
-  </script>
+        .glass-card-glow {
+            position: relative;
+        }
+        .glass-card-glow::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(90deg, rgba(249, 115, 22, 0.3), rgba(6, 182, 212, 0.1), rgba(249, 115, 22, 0.3));
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+        .glass-card-glow:hover::before {
+            opacity: 1;
+        }
+
+        /* Gradient Glow Orb Backgrounds */
+        .ambient-glow-orange {
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.22) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        .ambient-glow-cyan {
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        /* Shimmering Button */
+        .btn-shimmer {
+            background: linear-gradient(90deg, #ea580c 0%, #fb923c 50%, #ea580c 100%);
+            background-size: 200% 100%;
+            transition: all 0.3s ease;
+        }
+        .btn-shimmer:hover {
+            background-position: 100% 0;
+            box-shadow: 0 0 25px rgba(234, 88, 12, 0.6);
+        }
+
+        /* Radio & Checkbox Styling */
+        .custom-option {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .custom-option:hover {
+            border-color: rgba(249, 115, 22, 0.5);
+            background: rgba(249, 115, 22, 0.05);
+        }
+        .custom-option.selected {
+            border-color: #f97316;
+            background: rgba(249, 115, 22, 0.12);
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.2);
+        }
+
+        /* Metallic Text Gradient */
+        .text-gradient-metallic {
+            background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-orange {
+            background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0d12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1b2333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-200">
+
+    <!-- TOP ANNOUNCEMENT TICKER -->
+    <div class="bg-gradient-to-r from-dark-800 via-brand-900/40 to-dark-800 border-b border-gray-800 py-2.5 px-4 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                <span class="font-medium text-emerald-400"><i class="fa-solid fa-bolt mr-1"></i> 2 Technicians Currently Available In Your Area</span>
+                <span class="hidden md:inline text-gray-500">|</span>
+                <span class="hidden md:inline text-gray-400"><i class="fa-regular fa-clock mr-1"></i> Average Dispatch: <strong>24 Mins</strong></span>
+            </div>
+            <div class="flex items-center gap-4 text-gray-300 font-medium">
+                <span class="text-brand-400"><i class="fa-solid fa-shield-halved mr-1"></i> Upfront Pricing Guaranteed</span>
+                <a href="tel:18005553724" class="text-white hover:text-brand-400 font-bold transition-colors">
+                    <i class="fa-solid fa-phone text-brand-500 mr-1"></i> (800) 555-DRAIN
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="sticky top-0 z-40 backdrop-blur-xl bg-dark-900/80 border-b border-gray-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform border border-orange-400/30">
+                    <i class="fa-solid fa-water-ladder text-2xl"></i>
+                </div>
+                <div>
+                    <span class="font-display font-black text-xl sm:text-2xl tracking-tight text-white block leading-none">
+                        SAME DAY<span class="text-brand-500">.</span>
+                    </span>
+                    <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">Drain & Plumbing Specialist</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="#services" class="hover:text-brand-400 transition-colors">Services</a>
+                <a href="#calculator" class="hover:text-brand-400 transition-colors">Instant Estimator</a>
+                <a href="#reviews" class="hover:text-brand-400 transition-colors">Reviews</a>
+                <a href="#faq" class="hover:text-brand-400 transition-colors">FAQ</a>
+            </div>
+
+            <!-- Header Action Button -->
+            <div class="flex items-center gap-3">
+                <a href="tel:18005553724" class="hidden sm:flex flex-col items-end mr-2">
+                    <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">24/7 Hotline</span>
+                    <span class="font-display font-bold text-lg text-white hover:text-brand-400 transition-colors">(800) 555-3724</span>
+                </a>
+                <button onclick="scrollToDispatch()" class="btn-shimmer px-5 py-3 rounded-xl font-bold text-sm text-white shadow-lg flex items-center gap-2 group">
+                    <i class="fa-solid fa-truck-fast text-brand-100 group-hover:translate-x-1 transition-transform"></i>
+                    <span>Dispatch Technician</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
+        <!-- Ambient Glow Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] ambient-glow-orange rounded-full pointer-events-none -z-10 animate-pulse-glow"></div>
+        <div class="absolute top-1/3 left-10 w-[400px] h-[400px] ambient-glow-cyan rounded-full pointer-events-none -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column: Heading & Value Props -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Live Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border-gray-700/60 text-xs font-semibold text-brand-400">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+                        <span>Rapid Response Team Standing By</span>
+                        <span class="text-gray-500">•</span>
+                        <span class="text-gray-300"><i class="fa-solid fa-star text-amber-400 mr-1"></i>4.9/5 (1,420+ Reviews)</span>
+                    </div>
+
+                    <!-- Main Title -->
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+                        Fast Drain Clearing. <br>
+                        <span class="text-gradient-orange">Zero Stress. Guaranteed.</span>
+                    </h1>
+
+                    <!-- Paragraph -->
+                    <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Clogged sinks, backed-up main lines, or sewer overflows? Our licensed master plumbers arrive equipped with heavy-duty hydro-jetters and camera inspection tools within <span class="text-white font-semibold underline decoration-brand-500 decoration-2">60 minutes or less</span>.
+                    </p>
+
+                    <!-- Trust Pillars Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                        <div class="glass-card p-3 rounded-xl flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-dollar-sign text-lg"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400">Fixed Rates</p>
+                                <p class="text-xs font-bold text-white">No Hidden Fees</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-3 rounded-xl flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock-rotate-left text-lg"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400">Response</p>
+                                <p class="text-xs font-bold text-white">Under 60 Mins</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-3 rounded-xl flex items-center gap-3 col-span-2 sm:col-span-1">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-shield-check text-lg"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400">Warranty</p>
+                                <p class="text-xs font-bold text-white">100% Guaranteed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Contact Bar -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="tel:18005553724" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-red-600 to-brand-600 hover:from-red-500 hover:to-brand-500 text-white font-bold text-base shadow-xl shadow-red-900/30 flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-phone-volume animate-bounce"></i>
+                            <span>CALL EMERGENCY DISPATCH</span>
+                        </a>
+                        <div class="text-xs text-gray-400 text-center sm:text-left">
+                            <span><i class="fa-solid fa-headset text-brand-400 mr-1"></i> Live operator ready</span>
+                            <span class="block text-gray-500">Average ring time: 3 seconds</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hero Right Column: Interactive Dispatch Widget -->
+                <div class="lg:col-span-5" id="dispatch-form">
+                    <div class="glass-card glass-card-glow p-6 sm:p-8 rounded-3xl relative">
+                        <!-- Top Header -->
+                        <div class="flex items-center justify-between pb-6 border-b border-gray-800">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Rapid Dispatch</span>
+                                <h3 class="font-display font-bold text-xl text-white">Request Immediate Service</h3>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_12px_#10b981]"></span>
+                        </div>
+
+                        <!-- Step Interactive Form -->
+                        <form id="emergencyForm" class="space-y-4 pt-6" onsubmit="handleFormSubmit(event)">
+                            <!-- Issue Selector Grid -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Select Primary Issue</label>
+                                <div class="grid grid-cols-2 gap-2" id="issueOptions">
+                                    <div class="custom-option selected p-3 rounded-xl border border-gray-700/60 cursor-pointer flex items-center gap-2.5" onclick="selectIssue(this, 'Main Sewer Backup')">
+                                        <i class="fa-solid fa-pipe-valve text-brand-400 text-sm"></i>
+                                        <span class="text-xs font-semibold text-white">Sewer Line Backup</span>
+                                    </div>
+                                    <div class="custom-option p-3 rounded-xl border border-gray-700/60 cursor-pointer flex items-center gap-2.5" onclick="selectIssue(this, 'Clogged Kitchen/Bath')">
+                                        <i class="fa-solid fa-sink text-brand-400 text-sm"></i>
+                                        <span class="text-xs font-semibold text-white">Clogged Drain</span>
+                                    </div>
+                                    <div class="custom-option p-3 rounded-xl border border-gray-700/60 cursor-pointer flex items-center gap-2.5" onclick="selectIssue(this, 'Toilet Overflowing')">
+                                        <i class="fa-solid fa-toilet text-brand-400 text-sm"></i>
+                                        <span class="text-xs font-semibold text-white">Toilet Overflow</span>
+                                    </div>
+                                    <div class="custom-option p-3 rounded-xl border border-gray-700/60 cursor-pointer flex items-center gap-2.5" onclick="selectIssue(this, 'Commercial Drain')">
+                                        <i class="fa-solid fa-building text-brand-400 text-sm"></i>
+                                        <span class="text-xs font-semibold text-white">Commercial Issue</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Input Fields -->
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-400 mb-1">Your Full Name</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full bg-dark-900/80 border border-gray-700/80 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-400 mb-1">Phone Number (For ETA SMS)</label>
+                                    <input type="tel" required placeholder="(555) 000-0000" class="w-full bg-dark-900/80 border border-gray-700/80 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-400 mb-1">Service Address or Zip Code</label>
+                                    <input type="text" required placeholder="123 Main St, Your City" class="w-full bg-dark-900/80 border border-gray-700/80 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors">
+                                </div>
+                            </div>
+
+                            <!-- Urgency Radio -->
+                            <div class="pt-1">
+                                <label class="block text-xs font-semibold text-gray-400 mb-2">Time Urgency</label>
+                                <div class="flex items-center gap-4 text-xs font-medium">
+                                    <label class="flex items-center gap-2 cursor-pointer text-gray-300">
+                                        <input type="radio" name="urgency" value="ASAP" checked class="accent-brand-500">
+                                        <span>ASAP (Next Tech)</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-gray-300">
+                                        <input type="radio" name="urgency" value="Today" class="accent-brand-500">
+                                        <span>Later Today</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="w-full btn-shimmer py-4 rounded-xl font-bold text-white text-base shadow-xl flex items-center justify-center gap-2 mt-4">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>LOCK IN SAME-DAY DISPATCH</span>
+                            </button>
+
+                            <p class="text-[11px] text-center text-gray-500 pt-1">
+                                <i class="fa-solid fa-lock text-gray-600 mr-1"></i> No spam. Free phone consultation before dispatch.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE RECENT DISPATCH TICKER BANNER -->
+    <section class="py-4 bg-dark-800/80 border-y border-gray-800/80 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between text-xs text-gray-400">
+            <div class="flex items-center gap-3">
+                <span class="px-2 py-0.5 rounded bg-brand-500/20 text-brand-400 font-bold uppercase text-[10px] tracking-wider">Live Activity</span>
+                <div id="liveTicker" class="text-gray-300 font-medium transition-all duration-500">
+                    <i class="fa-solid fa-check text-emerald-400 mr-1"></i> Tech Dispatched to <strong>Oak Park</strong> for Main Line Camera Inspection (2 mins ago)
+                </div>
+            </div>
+            <span class="hidden md:inline text-gray-500"><i class="fa-solid fa-shield text-brand-500 mr-1"></i> Licensed & Insured #PLM-994821</span>
+        </div>
+    </section>
+
+    <!-- CORE SERVICES SECTION -->
+    <section id="services" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Master Service Suite</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-2">Specialized Drain & Sewer Solutions</h2>
+                <p class="text-gray-400 text-sm sm:text-base mt-3">We use commercial-grade hydro-jetting, motorized augers, and HD camera diagnostic equipment to fix the issue right the first time.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-3xl group hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-brand-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white mb-2">Hydro-Jetting Cleansing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">High-pressure water scouring that blast away grease, roots, scale, and heavy debris buildup inside main lines.</p>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Up to 4000 PSI Cleaning</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Clears Tough Tree Roots</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-3xl group hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-700 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-cyan-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white mb-2">HD Camera Pipe Inspection</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Real-time video inspection to pinpoint cracks, root intrusions, or collapsed pipes without digging up your yard.</p>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cyan-400"></i> Full Video Footage Provided</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cyan-400"></i> Exact Depth & Location Mapping</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-3xl group hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-700 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-amber-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-toilet"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white mb-2">Emergency Sewer Clearing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Immediate relief for backed-up main sewer lines threatening toilets, basements, and ground floors.</p>
+                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> 24/7 Rapid Call-Outs</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> Biohazard Containment Prep</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTANT ESTIMATOR / PRICING CALCULATOR -->
+    <section id="calculator" class="py-20 bg-dark-800/50 border-y border-gray-800/80 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Transparent Tool</span>
+                <h2 class="font-display text-3xl font-extrabold text-white mt-1">Instant Cost Estimator</h2>
+                <p class="text-gray-400 text-sm mt-2">Get an estimated range instantly before you book. No surprises.</p>
+            </div>
+
+            <div class="glass-card p-6 sm:p-10 rounded-3xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Controls -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-3">1. Service Type</label>
+                            <select id="calcService" onchange="calculateEstimate()" class="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+                                <option value="99">Standard Sink / Tub Drain Snake ($99 - $149)</option>
+                                <option value="189">Main Sewer Line Rooter Clearing ($189 - $249)</option>
+                                <option value="349">HD Camera Inspection & Hydro-Jet ($349 - $499)</option>
+                                <option value="149">Commercial Floor Drain Unclog ($149 - $220)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-3">2. Time Frame</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button type="button" onclick="setCalcTime(this, 0)" class="calc-time-btn active border border-brand-500 bg-brand-500/10 text-white p-3 rounded-xl text-xs font-semibold">
+                                    Standard Business Hours
+                                </button>
+                                <button type="button" onclick="setCalcTime(this, 49)" class="calc-time-btn border border-gray-700 text-gray-400 p-3 rounded-xl text-xs font-semibold">
+                                    After-Hours / Emergency (+$49)
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-2">3. Property Type</label>
+                            <div class="flex items-center gap-6 text-sm text-gray-300">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="propType" value="0" checked onchange="calculateEstimate()" class="accent-brand-500"> Single Family Home
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="propType" value="30" onchange="calculateEstimate()" class="accent-brand-500"> Multi-Unit / Commercial (+ $30)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result Box -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-br from-dark-900 to-dark-800 p-6 rounded-2xl border border-brand-500/30 text-center space-y-4">
+                            <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Estimated Total</span>
+                            <div class="font-display font-black text-4xl sm:text-5xl text-brand-400" id="calcPriceDisplay">
+                                $99 - $149
+                            </div>
+                            <p class="text-xs text-gray-400">Includes dispatch, initial diagnostic, and basic warranty.</p>
+                            <button onclick="scrollToDispatch()" class="w-full btn-shimmer py-3.5 rounded-xl font-bold text-white text-xs tracking-wider uppercase">
+                                Claim This Estimate
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE & AFTER / PROOF SECTION -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Proven Results</span>
+                <h2 class="font-display text-3xl font-extrabold text-white mt-1">Real Camera Diagnostic Proof</h2>
+                <p class="text-gray-400 text-sm mt-2">See how our hydro-jetting restores fully blocked sewer lines back to 100% flow capacity.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Proof Card 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-gray-800">
+                    <div class="relative bg-dark-900 p-8 text-center border-b border-gray-800">
+                        <span class="absolute top-4 left-4 bg-red-500/20 text-red-400 border border-red-500/30 text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">Before</span>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-red-950/40 border-2 border-red-500/40 flex items-center justify-center my-4">
+                            <i class="fa-solid fa-skull-crossbones text-3xl text-red-500"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Severe Root Intrusion</h4>
+                        <p class="text-xs text-gray-400 mt-1">95% blockage in 4" clay sewer pipe.</p>
+                    </div>
+                    <div class="p-4 bg-dark-900/40 text-xs text-gray-400 flex justify-between">
+                        <span>Locally Recorded</span>
+                        <span class="text-red-400 font-semibold">Zero Water Flow</span>
+                    </div>
+                </div>
+
+                <!-- Proof Card 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-brand-500/30">
+                    <div class="relative bg-dark-900 p-8 text-center border-b border-gray-800">
+                        <span class="absolute top-4 left-4 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">After Hydro-Jet</span>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-emerald-950/40 border-2 border-emerald-500/40 flex items-center justify-center my-4">
+                            <i class="fa-solid fa-circle-check text-3xl text-emerald-400"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Restored Like New</h4>
+                        <p class="text-xs text-gray-400 mt-1">Scoured clean to inner pipe walls.</p>
+                    </div>
+                    <div class="p-4 bg-dark-900/40 text-xs text-gray-400 flex justify-between">
+                        <span>1-Year Guarantee Passed</span>
+                        <span class="text-emerald-400 font-semibold">100% Flow Restored</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="reviews" class="py-20 bg-dark-800/40 border-t border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Verified Customer Feedback</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-1">Don't Take Our Word For It</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed italic">"Our main sewer line backed up on a Sunday night at 9 PM. Same Day had a truck in my driveway within 35 minutes and cleared the clog fast!"</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs font-bold text-white">Marcus Vance</p>
+                            <p class="text-[10px] text-gray-400">Homeowner • Verified Review</p>
+                        </div>
+                        <span class="text-xs text-brand-400 font-bold"><i class="fa-brands fa-google mr-1"></i> 5.0</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed italic">"Extremely upfront with their pricing. Other companies quoted me double for hydrojetting. They showed me the camera footage before and after."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs font-bold text-white">Sarah Jenkins</p>
+                            <p class="text-[10px] text-gray-400">Property Manager • Verified</p>
+                        </div>
+                        <span class="text-xs text-brand-400 font-bold"><i class="fa-brands fa-google mr-1"></i> 5.0</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed italic">"Clean, professional, and wore shoe covers in the house. Fixed a nasty kitchen sink block that 3 bottles of Drano couldn't touch."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs font-bold text-white">David K.</p>
+                            <p class="text-[10px] text-gray-400">Commercial Business Owner</p>
+                        </div>
+                        <span class="text-xs text-brand-400 font-bold"><i class="fa-brands fa-google mr-1"></i> 5.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Got Questions?</span>
+                <h2 class="font-display text-3xl font-extrabold text-white mt-1">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-white text-sm sm:text-base">How fast can a technician arrive at my property?</h4>
+                        <i class="fa-solid fa-chevron-down text-brand-400 transition-transform"></i>
+                    </div>
+                    <div class="hidden text-xs sm:text-sm text-gray-400 pt-3 border-t border-gray-800/80 mt-3 leading-relaxed">
+                        Our average emergency arrival time is under 45 minutes. We keep units staged across key sectors to ensure rapid response times 24 hours a day.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-white text-sm sm:text-base">Do you charge extra for nights or weekends?</h4>
+                        <i class="fa-solid fa-chevron-down text-brand-400 transition-transform"></i>
+                    </div>
+                    <div class="hidden text-xs sm:text-sm text-gray-400 pt-3 border-t border-gray-800/80 mt-3 leading-relaxed">
+                        We offer flat-rate pricing upfront. While emergency after-hours dispatch carries a standard small fee ($49), you will always approve the exact total price before we start any work.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-white text-sm sm:text-base">What if the clog comes back after you leave?</h4>
+                        <i class="fa-solid fa-chevron-down text-brand-400 transition-transform"></i>
+                    </div>
+                    <div class="hidden text-xs sm:text-sm text-gray-400 pt-3 border-t border-gray-800/80 mt-3 leading-relaxed">
+                        All our drain clearing and hydro-jetting services come backed with our 30-day to 1-year clear flow warranty depending on the service selected.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM CTA BANNER -->
+    <section class="py-16 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card p-10 sm:p-14 rounded-3xl text-center relative overflow-hidden border-brand-500/40">
+                <div class="max-w-2xl mx-auto space-y-6">
+                    <h2 class="font-display text-3xl sm:text-4xl font-black text-white">Don't Let A Clogged Drain Ruin Your Day.</h2>
+                    <p class="text-gray-300 text-sm sm:text-base">Call our 24/7 hotline now to get an instant quote or book a certified technician to your door right now.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                        <a href="tel:18005553724" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-base shadow-xl flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>(800) 555-DRAIN</span>
+                        </a>
+                        <button onclick="scrollToDispatch()" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white font-bold text-base hover:bg-white/10">
+                            Book Online
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900 border-t border-gray-800/80 py-12 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center text-white font-bold">
+                    <i class="fa-solid fa-water-ladder text-sm"></i>
+                </div>
+                <span class="font-display font-bold text-white text-base">SAME DAY DRAIN SERVICE</span>
+            </div>
+            <p>© 2026 Same Day Drain Service Inc. All rights reserved. Licensed Master Plumbers #PLM-994821.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SUCCESS DISPATCH MODAL -->
+    <div id="successModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-card p-8 rounded-3xl max-w-md w-full text-center space-y-5 border-brand-500/50">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mx-auto">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-white">Dispatch Request Received!</h3>
+            <p class="text-xs text-gray-300 leading-relaxed">We have reserved your place in line. A senior technician is reviewing your location details and will call your phone within <strong class="text-brand-400">3 minutes</strong> to confirm arrival time.</p>
+            <div class="bg-dark-900/80 p-4 rounded-xl border border-gray-800 text-left text-xs space-y-1">
+                <p class="text-gray-400">Issue: <strong class="text-white" id="modalIssue">Main Sewer Backup</strong></p>
+                <p class="text-gray-400">Est. Arrival: <strong class="text-emerald-400">Within 45 Mins</strong></p>
+            </div>
+            <button onclick="closeModal()" class="w-full btn-shimmer py-3 rounded-xl font-bold text-white text-xs uppercase tracking-wider">
+                Got It
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT INTERACTIVITY -->
+    <script>
+        // Issue Selection Logic
+        let selectedIssueText = "Main Sewer Backup";
+        function selectIssue(element, issueName) {
+            document.querySelectorAll('#issueOptions .custom-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            selectedIssueText = issueName;
+        }
+
+        // Smooth Scroll to Dispatch Form
+        function scrollToDispatch() {
+            document.getElementById('dispatch-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('modalIssue').innerText = selectedIssueText;
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        // FAQ Toggle
+        function toggleFaq(card) {
+            const content = card.querySelector('div:nth-child(2)');
+            const icon = card.querySelector('i');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Estimator Calculation Logic
+        let extraTimeCost = 0;
+        function setCalcTime(btn, cost) {
+            document.querySelectorAll('.calc-time-btn').forEach(b => {
+                b.classList.remove('active', 'border-brand-500', 'bg-brand-500/10', 'text-white');
+                b.classList.add('border-gray-700', 'text-gray-400');
+            });
+            btn.classList.add('active', 'border-brand-500', 'bg-brand-500/10', 'text-white');
+            btn.classList.remove('border-gray-700', 'text-gray-400');
+            extraTimeCost = cost;
+            calculateEstimate();
+        }
+
+        function calculateEstimate() {
+            const baseCost = parseInt(document.getElementById('calcService').value);
+            const propExtra = parseInt(document.querySelector('input[name="propType"]:checked').value);
+            const low = baseCost + extraTimeCost + propExtra;
+            const high = Math.round(low * 1.4);
+            document.getElementById('calcPriceDisplay').innerText = `$${low} - $${high}`;
+        }
+
+        // Live Ticker Cycle Simulation
+        const tickerItems = [
+            '<i class="fa-solid fa-check text-emerald-400 mr-1"></i> Tech Dispatched to <strong>Oak Park</strong> for Main Line Camera Inspection (2 mins ago)',
+            '<i class="fa-solid fa-check text-emerald-400 mr-1"></i> Emergency Kitchen Drain Cleared in <strong>Highland Lakes</strong> (12 mins ago)',
+            '<i class="fa-solid fa-check text-emerald-400 mr-1"></i> Hydro-Jetting Service Completed in <strong>Westside</strong> (28 mins ago)'
+        ];
+        let tickerIdx = 0;
+        setInterval(() => {
+            tickerIdx = (tickerIdx + 1) % tickerItems.length;
+            const liveTicker = document.getElementById('liveTicker');
+            if(liveTicker) {
+                liveTicker.style.opacity = 0;
+                setTimeout(() => {
+                    liveTicker.innerHTML = tickerItems[tickerIdx];
+                    liveTicker.style.opacity = 1;
+                }, 300);
+            }
+        }, 5000);
+    </script>
 </body>
 </html>
